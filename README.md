@@ -5,12 +5,12 @@ App to train the conjugations of Italian verbs
 
 ## Print
 
-[![N|Solid](https://github.com/leandrobhbr/coniugazione/docs/printConiugazione.png?raw=true)](https://coniugazione.surge.sh/)
+[![N|Solid](https://github.com/leandrobhbr/coniugazione/blob/master/docs/printConiugazione.png?raw=true)](https://leandrobhbr.github.io/coniugazione/#/)
 
 
 ## Demo
 
-https://coniugazione.surge.sh/
+https://leandrobhbr.github.io/coniugazione/#/
 
 ## Install the dependencies
 ```bash
