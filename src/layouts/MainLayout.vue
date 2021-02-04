@@ -13,10 +13,14 @@
         />
 
         <q-toolbar-title>
-          Coniugazione Italiano
+          CONIUGAZIONE ITALIANO
         </q-toolbar-title>
 
-        <div>Made with Quasar v{{ $q.version }}</div>
+        <div>
+          <q-btn flat type="a" color="white" label="Open Source" href="https://github.com/leandrobhbr/coniugazione" target="_blank">
+          <img class="q-ml-sm" src="~assets/github.png" style="width:30px" />
+          </q-btn>
+          </div>
       </q-toolbar>
     </q-header>
 

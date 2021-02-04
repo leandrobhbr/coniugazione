@@ -5,7 +5,7 @@
         <q-select
           outlined
           v-model="verboScelto"
-          label="Verbi più cercati"
+          label="100 Verbi più cercati"
           :options="opzioniDelVerbo"
           behavior="menu"
         />
@@ -28,6 +28,9 @@
                   :label=ritornaPersona(numeroFrase,data1.italiano)
                   :rules="[val => val === ritornaFrase(numeroFrase,data1.italiano) || ritornaFrase(numeroFrase,data1.italiano)]"
                 />
+                <div v-if="input[numeroFrase + index1 + index2 + ritornaPersona(numeroFrase,data1.italiano)] === ritornaFrase(numeroFrase,data1.italiano)">
+                  <q-icon class="text-green q-mr-sm" name="thumb_up" /> <span class="text-green negrito" v-html="ritornaFraseConStile(numeroFrase,data1.italiano)"></span>
+                </div>
               </div>
               </div>
             </div>
@@ -37,7 +40,9 @@
     </div>
   </q-page>
 </template>
-
+<style>
+.negrito b { color: red; }
+</style>
 <script>
 import verbi from 'assets/verbi.json'
 export default {
