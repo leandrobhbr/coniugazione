@@ -1,7 +1,7 @@
 # Coniugazione Italino (coniugazione)
 
-App per addestrare le coniugazioni dei verbi italiani
-App to train the conjugations of Italian verbs
+App che ho creato per mio uso personale. Mi aiuta ad allenare le coniugazioni dei verbi italiani. <br>
+App I created for my personal use. It helps me to train the conjugations of Italian verbs.
 
 ## Print
 
