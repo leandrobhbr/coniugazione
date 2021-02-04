@@ -67,6 +67,11 @@ export default {
       return opzioni
     }
   },
+  watch: {
+    verboScelto (newValue, oldValue) {
+      this.input = []
+    }
+  },
   methods: {
     raccontareConiugazione (value) {
       // console.log(value)
@@ -90,7 +95,7 @@ export default {
       return res2
     },
     ritornaFrasePort (numeroFrase, frasi) {
-      console.log(frasi)
+      // console.log(frasi)
       if (frasi !== '') {
         return this.ritornaFrase(numeroFrase, frasi)
       }
