@@ -5,7 +5,7 @@ App to train the conjugations of Italian verbs
 
 ## Print
 
-[![N|Solid](https://github.com/leandrobhbr/coniugazione/src/assets/printConiugazione.png?raw=true)](https://coniugazione.surge.sh/)
+[![N|Solid](https://github.com/leandrobhbr/coniugazione/docs/printConiugazione.png?raw=true)](https://coniugazione.surge.sh/)
 
 
 ## Demo
