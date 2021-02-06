@@ -48,13 +48,13 @@
                   class="q-mt-md"
                   ref="input"
                   lazy-rules
-                  v-model="input[data1.id + ritornaPersona(numeroFrase,data1.italiano)]"
+                  v-model="input[data1.id + ritornaFrase(numeroFrase,data1.italiano)]"
                   stack-label
                   :hint="ritornaFrasePort(numeroFrase,data1.portoghese)"
-                  :label=ritornaPersona(numeroFrase,data1.italiano)
+                  :label="ritornaPersona(numeroFrase,data1.italiano)"
                   :rules="[val => val === ritornaFrase(numeroFrase,data1.italiano) || ritornaFrase(numeroFrase,data1.italiano)]"
                 />
-                <div v-if="input[data1.id + ritornaPersona(numeroFrase,data1.italiano)] === ritornaFrase(numeroFrase,data1.italiano)">
+                <div v-if="input[data1.id + ritornaFrase(numeroFrase,data1.italiano)] === ritornaFrase(numeroFrase,data1.italiano)">
                   <q-icon class="text-green q-mr-sm" name="thumb_up" /> <span class="text-green negrito" v-html="ritornaFraseConStile(numeroFrase,data1.italiano)"></span>
                 </div>
               </div>
