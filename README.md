@@ -40,14 +40,14 @@ When contributing to this repository, please first discuss the change you wish t
 
 ## Donations
 
-If my app has helped you in any way and you want to buy me a coffee, you can use my PICPAY QRCode below. Any value is welcome and encourages me to continue creating content for the community.
+If my app has helped you in any way and you want to buy me a coffee, you can use my PICPAY below. Any value is welcome and encourages me to continue creating content for the community.
 
 To make a donation with paypal. Send an email to <a href="mailto:leandrobhbr@gmail.com">leandrobhbr@gmail.com</a>
 
 
 ### 🇧🇷 **BR**
 
- Caso o app tenha lhe ajudado de alguma forma e você queira me pagar um café, pode utilizar meu QRCode do PICPAY abaixo. Qualquer valor é bem vindo e me estimula a continuar criando conteúdos para a comunidade.
+ Caso o app tenha lhe ajudado de alguma forma e você queira me pagar um café, pode utilizar meu PICPAY abaixo. Qualquer valor é bem vindo e me estimula a continuar criando conteúdos para a comunidade.
 
 https://picpay.me/leandro.cunha.campos
 
