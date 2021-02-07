@@ -25,6 +25,8 @@
             <b>Piu tempi verbali?</b>
             <q-radio v-model="piuTempiVerbale" val="si" label="sì" />
             <q-radio v-model="piuTempiVerbale" val="no" label="no" />
+            <q-btn flat color="primary" icon="remove_red_eye" label="visualizzare le risposte" v-if="!vrisposte" @click="vrisposte = true" />
+            <q-btn flat color="primary" icon="cloud_queue" label="nascondi le risposte" v-if="vrisposte" @click="vrisposte = false" />
           </div>
           <q-tab-panels v-model="piuTempiVerbale" animated class="shadow-2 rounded-borders q-mt-md q-ml-sm">
           <q-tab-panel name="si">
@@ -54,8 +56,11 @@
                   :label="ritornaPersona(numeroFrase,data1.italiano)"
                   :rules="[val => val === ritornaFrase(numeroFrase,data1.italiano) || ritornaFrase(numeroFrase,data1.italiano)]"
                 />
-                <div v-if="input[data1.id + ritornaFrase(numeroFrase,data1.italiano)] === ritornaFrase(numeroFrase,data1.italiano)">
+                <div v-if="vrisposte === false && input[data1.id + ritornaFrase(numeroFrase,data1.italiano)] === ritornaFrase(numeroFrase,data1.italiano)">
                   <q-icon class="text-green q-mr-sm" name="thumb_up" /> <span class="text-green negrito" v-html="ritornaFraseConStile(numeroFrase,data1.italiano)"></span>
+                </div>
+                <div v-if="vrisposte">
+                  <span class="text-green negrito" v-html="ritornaFraseConStile(numeroFrase,data1.italiano)"></span>
                 </div>
               </div>
               </div>
@@ -79,7 +84,8 @@ export default {
       coniugazioni: null,
       input: [],
       chk: [],
-      piuTempiVerbale: 'no'
+      piuTempiVerbale: 'no',
+      vrisposte: false
     }
   },
   computed: {

@@ -10,7 +10,9 @@ node_modules
 /src-cordova/platforms
 /src-cordova/plugins
 /src-cordova/www
-/src-cordova/chaves
+
+# Chaves para atualizar APK
+/src/chaves
 
 # Capacitor related directories and files
 /src-capacitor/www
