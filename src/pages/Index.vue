@@ -68,7 +68,7 @@
                   stack-label
                   :hint="ritornaFrasePort(numeroFrase,data1.portoghese)"
                   :label="ritornaPersona(numeroFrase,data1.italiano)"
-                  :rules="[val => val.toLowerCase() === ritornaFrase(numeroFrase,data1.italiano) || ritornaFrase(numeroFrase,data1.italiano)]"
+                  :rules="[val => val !== undefined && val.toLowerCase() === ritornaFrase(numeroFrase,data1.italiano) || ritornaFrase(numeroFrase,data1.italiano)]"
                 />
                 <div v-if="vrisposte === false && ritornaInput(input[data1.id + ritornaFrase(numeroFrase,data1.italiano)]) === ritornaFrase(numeroFrase,data1.italiano)">
                   <q-icon class="text-green q-mr-sm" name="thumb_up" /> <span class="text-green negrito" v-html="ritornaFraseConStile(numeroFrase,data1.italiano)"></span>
@@ -90,19 +90,6 @@
 </style>
 <script>
 import verbi from 'assets/verbi.json'
-const stringOpzioni = opzioniDelVerboOriginale(true)
-function opzioniDelVerboOriginale (alfabetico = false) {
-  var opzioni2 = []
-  Object.entries(verbi).forEach(([key, value]) => {
-    opzioni2.push(`${value.verbi}`)
-  })
-  if (alfabetico) {
-    opzioni2.sort(function (a, b) {
-      return a.localeCompare(b)
-    })
-  }
-  return opzioni2
-}
 export default {
   data () {
     return {
@@ -112,8 +99,9 @@ export default {
       coniugazioni: null,
       input: [],
       chk: [],
-      opzioniDelVerboAlfabetico: stringOpzioni,
-      opzioniDelVerbo: opzioniDelVerboOriginale(),
+      stringOpzioni: this.opzioniInizioDelVerboOriginale(true),
+      opzioniDelVerboAlfabetico: this.opzioniInizioDelVerboOriginale(true),
+      opzioniDelVerbo: this.opzioniInizioDelVerboOriginale(),
       piuTempiVerbale: 'no',
       vrisposte: false
     }
@@ -134,6 +122,18 @@ export default {
     this.inizioChk()
   },
   methods: {
+    opzioniInizioDelVerboOriginale (alfabetico = false) {
+      var opzioni2 = []
+      Object.entries(verbi).forEach(([key, value]) => {
+        opzioni2.push(`${value.verbi}`)
+      })
+      if (alfabetico) {
+        opzioni2.sort(function (a, b) {
+          return a.localeCompare(b)
+        })
+      }
+      return opzioni2
+    },
     raccontareConiugazione (value) {
       // console.log(value)
       // le coniugazioni sono separate da [BR]
@@ -199,13 +199,13 @@ export default {
     filterFn (val, update) {
       if (val === '') {
         update(() => {
-          this.opzioniDelVerboAlfabetico = stringOpzioni
+          this.opzioniDelVerboAlfabetico = this.stringOpzioni
         })
         return
       }
       update(() => {
         const needle = val.toLowerCase()
-        this.opzioniDelVerboAlfabetico = stringOpzioni.filter(v => v.toLowerCase().indexOf(needle) > -1)
+        this.opzioniDelVerboAlfabetico = this.stringOpzioni.filter(v => v.toLowerCase().indexOf(needle) > -1)
       })
     }
   }
